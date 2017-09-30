@@ -17,7 +17,22 @@
 
     <br>
 
+    {!! Form::label('published_at', 'Publish on:') !!}
+    {!! Form::input('date', 'published_at', date('Y-m-d'), ['class'=>'form-control']) !!}
+
+    <br>
+
     {!! Form::submit() !!}
+
+    @if ($errors->any())
+
+        <ul>
+            @foreach($errors->all() as $error)
+                <li> {{$error}}</li>
+
+            @endforeach
+        </ul>
+    @endif
 
 
     {!!  Form::close() !!}
